@@ -15,20 +15,15 @@ int main() {
 
     std::cout << "Generating audio samples..." << std::endl;
 
-    for(int sampleIndex = 0; sampleIndex < maximumAmplitude; sampleIndex++) {
-        audioSamples[sampleIndex] = sampleIndex;
-    }
-
-    for(int sampleIndex = maximumAmplitude; sampleIndex < maximumAmplitude * 2; sampleIndex++) {
-        audioSamples[sampleIndex] = maximumAmplitude - (sampleIndex - maximumAmplitude);
-    }
-
-    for(int sampleIndex = maximumAmplitude * 2; sampleIndex < maximumAmplitude * 3; sampleIndex++) {
-        audioSamples[sampleIndex] = maximumAmplitude * 2 - sampleIndex;
-    }
-
-    for(int sampleIndex = maximumAmplitude * 3; sampleIndex < maximumAmplitude * 4; sampleIndex++) {
-        audioSamples[sampleIndex] = sampleIndex - maximumAmplitude * 4;
+    for(int sampleIndex = 0; sampleIndex < numberOfSamples / 8; sampleIndex++) {
+        audioSamples[sampleIndex * 8] = - maximumAmplitude;
+        audioSamples[sampleIndex * 8 + 1] = - maximumAmplitude / 2;
+        audioSamples[sampleIndex * 8 + 2] = 0;
+        audioSamples[sampleIndex * 8 + 3] = maximumAmplitude / 2;
+        audioSamples[sampleIndex * 8 + 4] = maximumAmplitude;
+        audioSamples[sampleIndex * 8 + 5] = maximumAmplitude / 2;
+        audioSamples[sampleIndex * 8 + 6] = 0;
+        audioSamples[sampleIndex * 8 + 7] = - maximumAmplitude / 2;
     }
 
     for(int sampleIndex = 0; sampleIndex < numberOfSamples; sampleIndex++) {
