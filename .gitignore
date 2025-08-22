@@ -42,3 +42,6 @@
 
 # VSCode files
 .vscode
+
+# Output WAV file(s)
+*.wav
